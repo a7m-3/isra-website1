@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>📚 مكتبة إسراء - تحميل كتب PDF</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdfdfd; margin:0; padding:0; direction:rtl; }
+    header { background:#4A2C87; color:#fff; padding:20px; text-align:center; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; }
+    main { padding:40px 20px; text-align:center; }
+    h2 { color:#333; margin-bottom:30px; }
+    .filters { margin-bottom:20px; }
+    .filters button { background:#4A2C87; color:#fff; border:none; padding:10px 15px; margin:5px; cursor:pointer; border-radius:5px; }
+    .filters button:hover { background:#6b45ad; }
+    .book-list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .book-card { background:#fff; border:1px solid #ddd; width:220px; padding:15px; border-radius:10px; transition:0.3s; }
+    .book-card img { width:100%; border-radius:5px; }
+    .book-card h3 { font-size:18px; margin:10px 0 5px; color:#4A2C87; }
+    .book-card a { display:block; margin-top:10px; padding:8px; background:#25D366; color:#fff; border-radius:5px; text-decoration:none; }
+    .book-card a:hover { background:#1ebe57; }
+    footer { background:#eee; text-align:center; padding:20px; margin-top:40px; font-size:14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 مكتبة إسراء</h1>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">جميع الكتب</a>
+    <a href="#">تحميل PDF</a>
+  </nav>
+</header>
+
+<main>
+  <h2>📥 تحميل كتب PDF مجانًا</h2>
+
+  <div class="filters">
+    <button onclick="filterBooks('all')">الكل</button>
+    <button onclick="filterBooks('روايات')">روايات</button>
+    <button onclick="filterBooks('تطوير')">تطوير ذاتي</button>
+    <button onclick="filterBooks('دينية')">كتب دينية</button>
+  </div>
+
+  <div class="book-list" id="pdf-books">
+
+    <!-- كتاب ديني -->
+    <div class="book-card" data-category="دينية">
+      <img src="https://via.placeholder.com/150x200?text=دينية" alt="رياض الصالحين">
+      <h3>رياض الصالحين</h3>
+      <a href="https://archive.org/download/RiyadUsSaliheenEnglish/Riyad-Us-Saliheen.pdf" download>تحميل PDF</a>
+    </div>
+
+    <!-- كتاب تطوير ذاتي -->
+    <div class="book-card" data-category="تطوير">
+      <img src="https://via.placeholder.com/150x200?text=تطوير" alt="العادات السبع">
+      <h3>العادات السبع للناس الأكثر فعالية</h3>
+      <a href="https://www.kutubm.com/download/12907" download>تحميل PDF</a>
+    </div>
+
+    <!-- نسخة أخرى -->
+    <div class="book-card" data-category="تطوير">
+      <img src="https://via.placeholder.com/150x200?text=تطوير" alt="العادات السبع">
+      <h3>العادات السبع للناس الأكثر فعالية (نسخة بديلة)</h3>
+      <a href="https://archive.org/download/pdf_20200131_20200131/pdf_20200131_20200131.pdf" download>تحميل PDF</a>
+    </div>
+
+    <!-- رواية -->
+    <div class="book-card" data-category="روايات">
+      <img src="https://via.placeholder.com/150x200?text=رواية" alt="رواية">
+      <h3>رواية عربية تجريبية</h3>
+      <a href="https://www.alarabimag.com/books/23087-%D9%83%D9%86-%D9%84%D9%86%D9%81%D8%B3%D9%83-%D9%83%D9%84-%D8%B4%D9%8A%D8%A1.html" download>تحميل PDF</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 مكتبة إسراء | جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+function filterBooks(category) {
+  document.querySelectorAll('.book-card').forEach(book => {
+    book.style.display = (category==='all' || book.dataset.category===category) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
